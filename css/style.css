@@ -33,7 +33,7 @@ a {
 
 .body {
     font-family: 'Poppins', sans-serif;
-
+    min-height: 100vh;
     color: black;
     background-color: white;
 
@@ -58,20 +58,23 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 70vh;
+    
 }
 
 section {
-    height: 30rem;
+    height: fit-content;
 }
 
 .formContainer {
     display: flex;
-    height: 20rem;
+    height: fit-content;
+    padding: 2rem;
 }
 
 .answer {
-    height: 10rem;
+    width: 90%;
+    height: fit-content;
+    padding: 1rem;
 }
 
 .esquina {
@@ -87,23 +90,8 @@ header,
 footer {
     height: 10rem;
     width: 100%;
+    margin:0;
 
-}
-
-.answer {
-    width: 90%;
-    height: 128px;
-    font-size: 1.3rem;
-}
-
-.field1 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 16px;
-    border: none;
 }
 
 .formContainer {
@@ -112,39 +100,36 @@ footer {
 
 #coinA,
 #coinB {
-    width: 40%;
+    width: 50%;
 }
-
-.field2 {
-    margin: 16px;
-    border: none;
+.field1, .field2 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-
+    margin: 16px;
+    border: none;
 }
 
 #cardsContainer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 16px;
     gap: 16px;
-
 }
 
 .card {
     text-align: center;
     min-width: 280px;
     min-height: 384px;
+    padding: 1rem;
 }
 
 .cardFooter,
 .cardF {
-    padding: 16px;
+    padding: 1rem;
 }
 
 .cardF {
@@ -178,18 +163,12 @@ footer {
     font-size: larger;
 }
 
-
 .bd-mode-toggle {
     z-index: 1500;
 }
 
 /* mediaqueries */
-@media(width >700px) {
-    #cardsContainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}
+
 
 
 @media(width >960px) {
@@ -197,17 +176,52 @@ footer {
         width: 8rem;
     }
 
-}
-@media(width <960px) {
-    .esquina {
-        width: 7rem;
+    header {
+        margin-bottom: 2rem;
     }
 
 }
 
-@media(width <720px) {
+@media(width <960px) {
+    .esquina {
+        width: 7rem;
+    }
+}
+
+@media(width <750px) {
     .esquina {
         width: 6rem;
+    }
+
+    #formContainer,
+    #cardsContainer,
+    #widgetContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .field1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .field2 {
+        gap: 2rem;
+        justify-content: space-evenly;
+    }
+
+    select {
+        width: 90%;
+    }
+
+    .card {
+        d
     }
 
 }
@@ -221,6 +235,9 @@ footer {
         display: none;
     }
 
+    select {
+        width: 100%;
+    }
 
     .answer {
         width: 95%;
@@ -273,8 +290,8 @@ September 29, 2019*/
 
 .loader {
     position: relative;
-    width: 21.875rem;
-    height: 21.875rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
     animation: animate 1.2s linear infinite;
