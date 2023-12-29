@@ -76,6 +76,8 @@ fetch(datos)
                     aux = aux.toFixed(6);
                     answer.innerHTML = `El valor de ${obSelA.name}, si llegara a tener el marketcap de ${obSelB.name} sería de $ ${aux}`;
                     renderCards(arregloAux);
+                    renderWidget(arregloAux);
+
                 } else {
                     console.log('Por favor, selecciona dos monedas diferentes.');
                 }

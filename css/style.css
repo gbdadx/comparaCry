@@ -72,9 +72,10 @@ section {
 }
 
 .answer {
-    width: 90%;
+    width: 100%;
     height: fit-content;
-    padding: 1rem;
+    padding: 2rem;
+    margin:1rem;
 }
 
 .esquina {
@@ -110,6 +111,7 @@ footer {
     align-items: center;
     margin: 16px;
     border: none;
+    gap:1rem;
 }
 
 #cardsContainer {
@@ -157,7 +159,9 @@ footer {
     font-size: 1.5rem;
 
 }
-
+.negrita{
+    font-weight: 700;
+}
 /* boton toggle dark-light*/
 #bd-theme {
     font-size: larger;
@@ -187,7 +191,12 @@ footer {
         width: 7rem;
     }
 }
-
+@media(width>750px){
+    .cardw, .widgetContainer{
+        width:100%;
+        padding:1rem;
+    }
+}
 @media(width <750px) {
     .esquina {
         width: 6rem;
@@ -219,9 +228,9 @@ footer {
     select {
         width: 90%;
     }
-
-    .card {
-        d
+    .cardw, .widgetContainer{
+        width:100%;
+        padding:1rem;
     }
 
 }
@@ -240,9 +249,10 @@ footer {
     }
 
     .answer {
-        width: 95%;
-        height: 8rem;
-        font-size: 1.5rem;
+        width: 100%;
+        height: fit-content;
+        font-size: 1.2rem;
+        
     }
 }
 

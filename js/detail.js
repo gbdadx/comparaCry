@@ -13,24 +13,21 @@ const card2Template = ` <div class="card card3">
         <img src="${objeto.image}" alt="${objeto.id}">
     </div>
     <div class="cardF">
-      
-       
-        <p>current price: ${objeto.current_price}</p>
-        <p>market cap: ${objeto.market_cap}</p>
-        <p>total suply: ${objeto.total_supply}</p>
-        <p>circulating supply: ${objeto.circulating_supply}</p>
-        <p>max supply: ${objeto.max_supply}</p>
-        <p>all time hight: ${objeto.ath}</p>
-         <p>ath date: ${objeto.atl_date}</p>
-         <p>high 24h: ${objeto.high_24h}</p>
-         <p>low 24h: ${objeto.ath}</p>
+        <p><span class="negrita">current price:</span>&nbsp&nbsp$ ${objeto.current_price}</p>
+        <p><span class="negrita">market cap:</span>&nbsp&nbsp ${objeto.market_cap}</p>
+        <p><span class="negrita">total suply:</span>&nbsp&nbsp ${objeto.total_supply}</p>
+        <p><span class="negrita">circulating supply:</span>&nbsp&nbsp ${objeto.circulating_supply}</p>
+        <p><span class="negrita">max supply:</span>&nbsp&nbsp ${objeto.max_supply}</p>
+        <p><span class="negrita">all time hight:</span>&nbsp&nbsp $ ${objeto.ath}</p>
+         <p><span class="negrita">ath date:</span>&nbsp&nbsp ${objeto.atl_date}</p>
+         <p><span class="negrita">high 24h:</span>&nbsp&nbsp$ ${objeto.high_24h}</p>
+         <p><span class="negrita">low 24h:</span>&nbsp&nbsp$ ${objeto.ath}</p>
 
-         <p>price change 24h: ${objeto.price_change_24h}</p>
-         <p>price change %-24h: ${objeto.price_change_percentage_24h}</o>
-        
-         <p>last updated: ${objeto.last_updated}</p>
- 
+         <p><span class="negrita">price change 24h: </span>&nbsp&nbsp $ ${objeto.price_change_24h}</p>
+         <p><span class="negrita">price change %-24h:</span>&nbsp&nbsp ${objeto.price_change_percentage_24h}%</o>
+         <p><span class="negrita">last updated: </span>&nbsp&nbsp${objeto.last_updated}</p>
     </div>
+
 </div>
 `;
 
