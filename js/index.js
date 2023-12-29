@@ -159,7 +159,7 @@ fetch(datos)
             widget.setAttribute('width', 'auto');
     
             // Adjunta el widget al contenedor del widget
-            widget.setAttribute('class', 'card, cardw')
+            widget.setAttribute('class', 'cardw')
             document.getElementById('widgetContainer').appendChild(widget);
         };
     }
