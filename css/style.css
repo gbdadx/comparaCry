@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body {
+    font-family: 'Poppins', sans-serif;
+
+    color: black;
+    background-color: white;
+
+}
+
+body,
+header,
+footer,
+.formContainer,
+.answer,
+.field2,
+.card,
+.card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70vh;
+}
+
+section {
+    height: 30rem;
+}
+
+.formContainer {
+    display: flex;
+    height: 20rem;
+}
+
+.answer {
+    height: 10rem;
+}
+
+.esquina {
+    display: inline;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 8rem;
+    z-index: -1;
+}
+
+header,
+footer {
+    height: 10rem;
+    width: 100%;
+
+}
+
+.answer {
+    width: 90%;
+    height: 128px;
+    font-size: 1.3rem;
+}
+
+.field1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 16px;
+    border: none;
+}
+
+.formContainer {
+    width: 100%;
+}
+
+#coinA,
+#coinB {
+    width: 40%;
+}
+
+.field2 {
+    margin: 16px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#cardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    gap: 16px;
+
+}
+
+.card {
+    text-align: center;
+    min-width: 280px;
+    min-height: 384px;
+}
+
+.cardFooter,
+.cardF {
+    padding: 16px;
+}
+
+.cardF {
+    text-align: start;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+}
+
+
+.card:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0rem .4375rem 1.8125rem 0rem;
+}
+
+.card:active {
+    box-shadow: rgba(0, 0, 0, 0.35) 0rem .3125rem .9375rem;
+}
+
+.card3 .cardH {
+    padding-top: 16px;
+}
+
+.btnDreturn {
+    margin: 16px;
+    padding: 16px;
+    font-size: 1.5rem;
+
+}
+
+/* boton toggle dark-light*/
+#bd-theme {
+    font-size: larger;
+}
+
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+/* mediaqueries */
+@media(width >700px) {
+    #cardsContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media(width <960px) {
+    .esquina {
+        width: 9rem;
+    }
+
+}
+
+@media(width <720px) {
+    .esquina {
+        width: 8rem;
+    }
+
+}
+
+@media(width <450px) {
+    .esquina {
+        display: none;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+
+    .answer {
+        width: 95%;
+        height: 8rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media(width >1200px) {
+    html {
+        font-size: 22px;
+    }
+}
+
+@media(width >900px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media(width>=700px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media(width >500px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media(width >300px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media(width <300px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+
+
+/*-loader  
+author : Adam Dipinto
+September 29, 2019*/
+
+.loader {
+    position: relative;
+    width: 21.875rem;
+    height: 21.875rem;
+    border-radius: 50%;
+    background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
+    animation: animate 1.2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
+}
+
+.loader span:nth-child(1) {
+    filter: blur(.3125rem);
+}
+
+.loader span:nth-child(2) {
+    filter: blur(.625rem);
+}
+
+.loader span:nth-child(3) {
+    filter: blur(1.5625rem);
+}
+
+.loader span:nth-child(4) {
+    filter: blur(3.125rem);
+}
+
+.loader:after {
+    content: '';
+    position: absolute;
+    top: .625rem;
+    left: .625rem;
+    right: .625rem;
+    bottom: .625rem;
+    background: #f1f1f1;
+    border: solid white .625rem;
+    border-radius: 50%;
+}
