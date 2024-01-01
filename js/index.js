@@ -27,25 +27,31 @@ fetch(datos)
     .then(data => {
         let objetos = data; // Asigna los datos a la variable objetos
 
-        // Función para llenar los select (coinA y coinB) con opciones
-        function fillSelect() {
+        // Función para llenar el select con opciones y aplicar Select2
+        function fillSelect(coinSelect, opcionesArray) {
+            const select = document.getElementById(coinSelect);
+
             for (let e of objetos) {
-                opcionesA.push(e.name);
-                opcionesB.push(e.name);
+                opcionesArray.push(e.name);
 
-                var optionA = document.createElement("option");
-                var optionB = document.createElement("option");
+                var option = document.createElement("option");
 
-                optionA.value = e.name;
-                optionA.text = e.name;
+                option.value = e.name;
+                option.text = e.name;
 
-                optionB.value = e.name;
-                optionB.text = e.name;
-
-                coinA.appendChild(optionA);
-                coinB.appendChild(optionB);
+                select.appendChild(option);
             }
+
+            // Aplica Select2 al select
+            $(document).ready(function () {
+                $("#" + coinSelect).select2();
+            });
         }
+
+        // Llamada a la función para llenar y aplicar Select2 en ambos selects
+        fillSelect("coinA", opcionesA);
+        fillSelect("coinB", opcionesB);
+
 
         // Evento para el botón "Reset"
         reset.addEventListener('click', () => {
@@ -132,37 +138,37 @@ fetch(datos)
             }
             agregarEventoACard();
         }
-   
-/**WIDGET GRAFICO */
-       // Función para renderizar el widget
-       function renderWidget(arreglo) {
-        let moneda1 = arreglo[0].id.replaceAll(' ', '-');
-        let moneda2 = arreglo[1].id.replaceAll(' ', '-');
-        console.log(`moneda1 ${moneda1}  y moneda2 ${moneda2}`);
-    
-        // Limpia el contenido del contenedor de widgets
-        document.getElementById('widgetContainer').innerHTML = '';
-    
-        // Crea un elemento de script
-        const scriptElement = document.createElement('script');
-        scriptElement.src = 'https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js';
-    
-        // Adjunta el script al contenedor del widget
-        document.getElementById('widgetContainer').appendChild(scriptElement);
-    
-        // Configura el evento onload para el script
-        scriptElement.onload = function () {
-            const widget = document.createElement('coingecko-coin-compare-chart-widget');
-            widget.setAttribute('coin-ids', `${moneda1},${moneda2}`);
-            widget.setAttribute('currency', 'usd');
-            widget.setAttribute('locale', 'en');
-            widget.setAttribute('width', 'auto');
-    
-            // Adjunta el widget al contenedor del widget
-            widget.setAttribute('class', 'cardw')
-            document.getElementById('widgetContainer').appendChild(widget);
-        };
-    }
+
+        /**WIDGET GRAFICO */
+        // Función para renderizar el widget
+        function renderWidget(arreglo) {
+            let moneda1 = arreglo[0].id.replaceAll(' ', '-');
+            let moneda2 = arreglo[1].id.replaceAll(' ', '-');
+            console.log(`moneda1 ${moneda1}  y moneda2 ${moneda2}`);
+
+            // Limpia el contenido del contenedor de widgets
+            document.getElementById('widgetContainer').innerHTML = '';
+
+            // Crea un elemento de script
+            const scriptElement = document.createElement('script');
+            scriptElement.src = 'https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js';
+
+            // Adjunta el script al contenedor del widget
+            document.getElementById('widgetContainer').appendChild(scriptElement);
+
+            // Configura el evento onload para el script
+            scriptElement.onload = function () {
+                const widget = document.createElement('coingecko-coin-compare-chart-widget');
+                widget.setAttribute('coin-ids', `${moneda1},${moneda2}`);
+                widget.setAttribute('currency', 'usd');
+                widget.setAttribute('locale', 'en');
+                widget.setAttribute('width', 'auto');
+
+                // Adjunta el widget al contenedor del widget
+                widget.setAttribute('class', 'cardw')
+                document.getElementById('widgetContainer').appendChild(widget);
+            };
+        }
 
         // Función para agregar eventos a las tarjetas
         function agregarEventoACard() {
